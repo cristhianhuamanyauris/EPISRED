@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, user } from '@angular/fire/auth';
 
-export interface user {
+export interface User {
   email: string;
   password: string;
 
@@ -12,9 +12,11 @@ export interface user {
 export class AuthService {
   private _auth = inject(Auth);
 
-  singup(user: user){
+  singup(user: User){
     return createUserWithEmailAndPassword(this._auth, user.email, user.password);
   }
 
-  constructor() { }
+  singin(user: User){
+    return signInWithEmailAndPassword(this._auth, user.email, user.password)
+  }
 }
