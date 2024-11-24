@@ -49,7 +49,7 @@ export default class SinginComponent {
       toast.success('Hola de nuevo')
       this._router.navigateByUrl('/tasks');
     } catch (error) {
-      toast.error('El usuario no se creo')
+      toast.error('Contraseña incorrecta')
     }
   
       //const {email, password} = this.form.value;
