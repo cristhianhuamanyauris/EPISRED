@@ -1,12 +1,20 @@
 import { Component } from "@angular/core";
-import { RouterModule, Router } from "@angular/router";
+import { RouterModule, Router, RouterLink } from "@angular/router";
 import { inject } from "@angular/core";
 import { AuthStateService } from "../dataccces/auth-state.service";
 @Component({
     standalone: true,
-    imports: [RouterModule],
+    imports: [RouterModule, RouterLink],
     selector: 'app-Layout',
-    template: '<button (click)="logOut()">Salir</button>, <router-outlet/>',
+    styleUrl: './layout.component.css',
+    template: `
+    <header class="header">
+        <nav class="nav">
+            <a class="logo" routerLink="/tasks">Ng Task</a>
+            <button class="logout" (click)="logOut()">Salir</button>
+        </nav>
+    </header>
+    <router-outlet></router-outlet>`
 })
 export default class LayoutComponent {
     //constructor(){

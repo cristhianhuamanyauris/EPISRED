@@ -1,0 +1,65 @@
+/* General layout of the header */
+.header {
+    height: 80px; /* Tailwind class: h-[80px] */
+    margin-bottom: 2rem; /* Tailwind class: mb-8 */
+    width: 100%; /* Tailwind class: w-full */
+    max-width: 1024px; /* Tailwind class: max-w-screen-lg */
+    margin-left: auto; /* Tailwind class: mx-auto */
+    margin-right: auto;
+    padding: 0 1rem; /* Tailwind class: px-4 */
+  }
+  
+  /* Navigation bar */
+  .nav {
+    display: flex; /* Tailwind class: flex */
+    align-items: center; /* Tailwind class: items-center */
+    justify-content: space-between; /* Tailwind class: justify-between */
+    height: 100%; /* Tailwind class: h-full */
+  }
+  
+  /* Logo styles */
+  .logo {
+    font-size: 1.5rem; /* Tailwind class: text-2xl */
+    font-weight: bold; /* Tailwind class: font-bold */
+    text-decoration: none;
+  }
+  
+  /* Logout button 
+  .logout {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: inherit;
+    cursor: pointer;
+  }*/
+  /* Logout button */
+.logout {
+    position: relative; /* Permite posicionar el pseudo-elemento para el borde blanco */
+    background-color: red; /* Relleno rojo */
+    color: white; /* Texto blanco */
+    border: 2px solid black; /* Borde negro */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por el botón */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    overflow: visible; /* Asegura que los bordes externos sean visibles */
+  }
+  
+  .logout::before {
+    content: ''; /* Pseudo-elemento para el borde blanco */
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid white; /* Capa de borde blanco */
+    z-index: -1; /* Coloca este borde detrás del botón */
+  }
+  
+  .logout:hover {
+    opacity: 0.9; /* Añade un efecto al pasar el mouse */
+    transform: scale(1.05); /* Incrementa ligeramente el tamaño */
+  }
+  
+  
