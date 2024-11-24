@@ -13,10 +13,10 @@ import { AuthStateService } from './comp/dataccces/auth-state.service';
 })
 export class AppComponent {
 
-  private _authState = inject(AuthStateService)
-  private _router = inject(Router);
-  async logOut(){
-    await this._authState.logOut();
-    this._router.navigateByUrl('/auth/singin')
-  }
+    //private _authState = inject(AuthStateService)
+    //private _router = inject(Router);
+    //async logOut(){
+       // await this._authState.logOut();
+        //this._router.navigateByUrl('/auth/singin')
+    //}
 }
