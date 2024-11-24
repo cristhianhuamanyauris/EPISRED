@@ -34,6 +34,7 @@ export default class SinginComponent {
     email: this._formBuilder.control('', [
       Validators.required,
       Validators.email,
+      //unajmaEmailValidator,
 
     ]),
     password: this._formBuilder.control('', Validators.required),

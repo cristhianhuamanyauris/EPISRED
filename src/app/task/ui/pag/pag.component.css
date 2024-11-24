@@ -1,0 +1,75 @@
+/* Profile Card Styles */
+
+  
+  .profile-content {
+    display: flex; /* Tailwind: flex */
+    flex-direction: column; /* Tailwind: flex-col */
+    align-items: center; /* Tailwind: items-center */
+    padding: 1.5rem; /* Tailwind: p-6 */
+  }
+  
+  .profile-image {
+    width: 6rem; /* Tailwind: w-24 */
+    height: 6rem; /* Tailwind: h-24 */
+    margin-bottom: 0.75rem; /* Tailwind: mb-3 */
+    border-radius: 9999px; /* Tailwind: rounded-full */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind: shadow-lg */
+  }
+  
+  .profile-name {
+    margin-bottom: 0.25rem; /* Tailwind: mb-1 */
+    font-size: 1.25rem; /* Tailwind: text-xl */
+    font-weight: 500; /* Tailwind: font-medium */
+    color: #111827; /* Tailwind: text-gray-900 */
+  }
+  
+  .profile-title {
+    font-size: 0.875rem; /* Tailwind: text-sm */
+    color: #6b7280; /* Tailwind: text-gray-500 */
+  }
+  
+  .profile-actions {
+    margin-top: 1rem; /* Tailwind: mt-4 */
+    display: flex; /* Tailwind: space-x-3 */
+    gap: 0.75rem;
+  }
+  
+  /* Follow Button */
+  .btn-follow {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Tailwind: px-4 py-2 */
+    font-size: 0.875rem; /* Tailwind: text-sm */
+    font-weight: 500; /* Tailwind: font-medium */
+    color: white;
+    background-color: #3b82f6; /* Tailwind: bg-blue-500 */
+    border-radius: 0.5rem; /* Tailwind: rounded-lg */
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-follow:hover {
+    background-color: #2563eb; /* Tailwind: hover:bg-blue-600 */
+  }
+  
+  /* Message Button */
+  .btn-message {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Tailwind: px-4 py-2 */
+    font-size: 0.875rem; /* Tailwind: text-sm */
+    font-weight: 500; /* Tailwind: font-medium */
+    color: #111827; /* Tailwind: text-gray-900 */
+    background-color: transparent;
+    border: 1px solid #d1d5db; /* Tailwind: border border-gray-300 */
+    border-radius: 0.5rem; /* Tailwind: rounded-lg */
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-message:hover {
+    background-color: #f9fafb; /* Tailwind: hover:bg-gray-100 */
+  }
+  /* Estilo para el contenedor de la sección */
+
+  

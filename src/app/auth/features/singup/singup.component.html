@@ -6,7 +6,7 @@
       <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
         <div class="form-group">
           <label for="email" class="form-label">Tu correo</label>
-          <input type="email" name="email" id="email" class="form-input" placeholder="name@company.com" formControlName="email" >
+          <input type="email" name="email" id="email" class="form-input" placeholder="name@unajma.edu.pe" formControlName="email" >
             @if(isRequired('email')){
               <small>Este campo es requerido</small>
             }
@@ -18,8 +18,9 @@
           <label for="password" class="form-label">Contraseña</label>
           <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" formControlName="password">
             @if(isRequired('password')){
-              <small>Este campo es requerido</small>
+              <small>Este campo es requerido<br></small>
             }
+            <small>La contraseña debe tener minimo 6 caracteres</small>
         </div>
         <button type="submit" class="btn-primary">Crear</button>
         <p class="signup-link">

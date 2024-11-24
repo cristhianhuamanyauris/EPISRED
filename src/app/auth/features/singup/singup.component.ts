@@ -6,6 +6,7 @@ import { hasEmailError, isRequired } from '../../utils/validators';
 import { AuthService } from '../../datacces/auth.service';
 import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
+import { unajmaEmailValidator } from '../../utils/validators';
 export interface Formsingup {
     email: FormControl<string | null >;
     password: FormControl<string | null >;  
@@ -33,7 +34,8 @@ export default class SingupComponent {
   form = this._formBuilder.group<Formsingup>({
     email: this._formBuilder.control('', [
       Validators.required,
-      Validators.email,
+      //Validators.email,
+      unajmaEmailValidator(), // Aquí agregamos el validador personalizado
 
     ]),
     password: this._formBuilder.control('', Validators.required),

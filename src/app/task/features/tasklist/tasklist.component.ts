@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { PagComponent } from '../../ui/pag/pag.component';
 
 @Component({
   selector: 'app-tasklist',
   standalone: true,
-  imports: [],
+  imports: [PagComponent],
   templateUrl: './tasklist.component.html',
   styleUrl: './tasklist.component.css'
 })

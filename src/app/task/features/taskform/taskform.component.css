@@ -1,0 +1,11 @@
+
+/* Estilo para el contenedor de la sección */
+.section-container {
+    margin-left: auto; /* Tailwind: mx-auto */
+    margin-right: auto;
+    width: 100%; /* Tailwind: w-full */
+    max-width: 1024px; /* Tailwind: max-w-screen-lg */
+    padding-left: 1rem; /* Tailwind: px-4 */
+    padding-right: 1rem;
+  }
+  
