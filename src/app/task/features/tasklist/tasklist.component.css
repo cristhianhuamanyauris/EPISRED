@@ -1,0 +1,38 @@
+.personalizarsecc {
+    margin: auto; /* Centra la sección horizontalmente */
+    width: 100%;
+    max-width: 1024px; /* Ancho máximo de 1024px */
+    padding: 0 1rem; /* Espaciado interno a los lados */
+}
+
+.logout {
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    background-color: red; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border: 2px solid black; /* Borde negro */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    overflow: hidden; /* Asegura que los pseudo-elementos no desborden */
+    transition: all 0.3s ease; /* Suaviza los efectos de hover */
+    margin-top: 8px; /* Añade un margen superior de 8 píxeles */
+}
+
+.logout::before {
+    content: ''; /* Pseudo-elemento para el borde blanco */
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 2px solid white; /* Crea el borde blanco externo */
+    z-index: -1; /* Envía este pseudo-elemento detrás del botón */
+    border-radius: 4px; /* Da un efecto más suave en las esquinas */
+}
+
+.logout:hover {
+    opacity: 0.9; /* Suaviza el color al pasar el mouse */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
