@@ -31,6 +31,7 @@ export default class SinginComponent {
     return hasEmailError(this.form);
   }
   form = this._formBuilder.group<Formsingin>({
+    //modificacion clave
     email: this._formBuilder.control('', [
       Validators.required,
       Validators.email,

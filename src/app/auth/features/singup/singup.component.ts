@@ -8,6 +8,9 @@ import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
 import { unajmaEmailValidator } from '../../utils/validators';
 export interface Formsingup {
+  //modificación clave
+    //name: FormControl<string | null >;
+    //apel: FormControl<string | null >;
     email: FormControl<string | null >;
     password: FormControl<string | null >;  
 }
@@ -32,6 +35,9 @@ export default class SingupComponent {
     return hasEmailError(this.form);
   }
   form = this._formBuilder.group<Formsingup>({
+    //modificacion clave name y apel
+    //name: this._formBuilder.control('', Validators.required),
+    //apel: this._formBuilder.control('', Validators.required),
     email: this._formBuilder.control('', [
       Validators.required,
       //Validators.email,

@@ -1,1 +1,31 @@
-<section class="section-container">Hola</section>
+<section class="section-container">
+    <!--Primer cambio acá-->
+    <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="tittle" class="form-label">Titulo</label>
+          <input type="tittle" name="title" id="texto" class="form-input" placeholder="El titulo de tu publicacion" formControlName="tittle" >
+            <!-- @if(isRequired('email')){
+              <small>Este campo es requerido</small>
+            }
+            @if (hasEmailError()) {
+              <small>El correo debe ser válido</small>
+            }-->
+        </div>
+        <div class="form-group">
+            <label for="descrip" class="form-label">Descripción</label>
+            <textarea 
+              name="descrip" 
+              id="textarea" 
+              class="form-input" 
+              placeholder="Escribe tu texto aquí..." 
+              formControlName="descrip"
+              rows="5"
+              cols="40">
+            </textarea>
+           <!-- @if(isRequired('password')){
+              <small>Este campo es requerido</small>
+            }-->
+        </div>
+        <button type="submit" class="btn-primary" [disabled]="loading()">{{ loading() ? 'Subiendo...': 'Subir ' }}</button>
+      </form>
+</section>
