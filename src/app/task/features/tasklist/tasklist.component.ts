@@ -10,6 +10,6 @@ import { TaskService } from '../../datacces/task.service';
   styleUrl: './tasklist.component.css'
 })
 export default class TasklistComponent {
-  tasks = inject(TaskService).getTasks;
+  taskService = inject(TaskService);
 
 }

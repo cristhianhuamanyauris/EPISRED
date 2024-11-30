@@ -1,5 +1,11 @@
 
 <section class="personalizarsecc">
     <a routerLink="/tasks/new" class="logout" >Nuevo post</a>
-    <app-pag [tasks]="tasks()" />
+    @if (taskService.loading()) {
+        <p>Espere un momento...</p>
+
+    } @else {
+        <app-pag [tasks]="taskService.getTasks()" />
+    }
+    
 </section>

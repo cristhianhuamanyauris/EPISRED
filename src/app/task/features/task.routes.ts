@@ -6,7 +6,7 @@ export default [
     { path: 'new',
         loadComponent: () => import('./taskform/taskform.component')
     },
-    { path: 'edit/id',
+    { path: 'edit/:idTask',
         loadComponent: () => import('./taskform/taskform.component')
     },
 ] as Routes;

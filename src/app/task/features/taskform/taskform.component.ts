@@ -1,9 +1,11 @@
-import { Component, inject, signal } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, effect, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TaskCreate, TaskService } from '../../datacces/task.service';
+import { Task, TaskCreate, TaskService } from '../../datacces/task.service';
 import { toast } from 'ngx-sonner';
 import { Router } from '@angular/router';
-
+import { input } from '@angular/core';
+import { __await } from 'tslib';
+import { $locationShim } from '@angular/common/upgrade';
 @Component({
   selector: 'app-taskform',
   standalone: true,
@@ -17,11 +19,22 @@ export default class TaskformComponent {
   private _taskService = inject(TaskService);
   private _router = inject(Router)
   loading = signal(false);
+  idTask = input.required<string>();
 
   form = this._formBuilder.group({
     tittle: this._formBuilder.control('', Validators.required),
     descrip: this._formBuilder.control('', Validators.required)
   });
+
+  constructor(){
+    effect(() => {
+      console.log(this.idTask());
+      const id = this.idTask();
+      if (id) {
+        this.getTask(id);
+      }
+    });
+  }
   async submit() {
     if(this.form.invalid) return;
 
@@ -33,8 +46,14 @@ export default class TaskformComponent {
         tittle: tittle || '',
         descrip: descrip || '',
       };
-      await this._taskService.create(task);
-      toast.success('Post publicado correctamente.');
+      const id  = this.idTask();
+      if (id) {
+        await this._taskService.update(task, id);
+        
+      }else{
+        await this._taskService.create(task);
+      }
+      toast.success(`Post ${id ? 'Editada': 'Creada'} correctamente.`);
       this._router.navigateByUrl('/tasks');
 
     } catch (error) {
@@ -44,5 +63,16 @@ export default class TaskformComponent {
       this.loading.set(false);
     }  
   };
+
+  async getTask(id: string){
+    const taskSnapshot = await this._taskService.getTask(id);
+
+    if (!taskSnapshot.exists()) return;
+
+    const task = taskSnapshot.data() as Task;
+
+    this.form.patchValue(task);
+  }
+
 
 }
