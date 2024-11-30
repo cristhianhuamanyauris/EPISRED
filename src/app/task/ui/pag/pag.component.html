@@ -1,8 +1,8 @@
-<div class="product-info">
-    <div class="product">
-        <h3 class="product-name">Apple MacBook Pro 17"</h3>
-        <p><strong>Color:</strong> Silver</p>
-        <p><strong>Category:</strong> Laptop</p>
-        <p><strong>Price:</strong> $2999</p>
+@for(task of tasks(); track task.id) {
+    <div class="product-info">
+        <div class="product">
+            <h3 class="product-name"><small>Título de la publicación:</small><br>{{task.tittle}}</h3>
+            <p><small>Descripción:</small><br>{{task.descrip}}</p>
+        </div>
     </div>
-</div>
+}

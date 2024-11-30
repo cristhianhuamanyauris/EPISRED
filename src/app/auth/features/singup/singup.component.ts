@@ -59,12 +59,7 @@ export default class SingupComponent {
     } catch (error) {
       toast.error('El usuario no se creo')
     }
-  
-      //const {email, password} = this.form.value;
-      //if( !email || !password) return;
-      //console.log(this.form.getRawValue());
-      //this._authService.singup({email, password}); 
-      //toast.success('usuario creado correctamente');
+
     
   }
 }
