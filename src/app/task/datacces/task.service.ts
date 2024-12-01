@@ -1,7 +1,7 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, Query, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { updateCurrentUser } from '@angular/fire/auth';
-import { addDoc, collection, collectionData, doc, Firestore, getDoc, updateDoc } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, doc, Firestore, getDoc, query, updateDoc, where } from '@angular/fire/firestore';
 import { catchError, Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs';
 import { AuthStateService } from '../../comp/dataccces/auth-state.service';
@@ -14,16 +14,20 @@ export interface Task {
 export type TaskCreate = Omit<Task, 'id'>;
 
 const PATH = 'tasks';
-@Injectable({
+@Injectable(/*{ 
   providedIn: 'root'
-})
+}*/)
 export class TaskService {
   private _firestore = inject(Firestore);
   private _authState = inject(AuthStateService)
   private _collection = collection(this._firestore, PATH);
+  private _query = query(
+    this._collection,
+    where('userId', '==', this._authState.currentUser?.uid)
+  )
   
   loading = signal<boolean>(true); 
-  getTasks = toSignal((collectionData(this._collection, {idField: 'id'}) as Observable<Task[]>).pipe(
+  getTasks = toSignal((collectionData(this._query, {idField: 'id'}) as Observable<Task[]>).pipe(
     tap(() => {
       this.loading.set(false)
     }),
@@ -42,12 +46,12 @@ export class TaskService {
     return getDoc(docRef);
   }
   create(task: TaskCreate){
-    return addDoc(this._collection, task);
+    return addDoc(this._collection, {...task, userId: this._authState.currentUser?.uid});
   }
 
   update(task: TaskCreate, id: string){
     const docRef = doc(this._collection, id);
-    return updateDoc(docRef, task);
+    return updateDoc(docRef, {...task, userId: this._authState.currentUser?.uid});
 
   }
 }

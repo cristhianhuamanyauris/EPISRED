@@ -10,7 +10,7 @@ import { AuthStateService } from "../dataccces/auth-state.service";
     template: `
     <header class="header">
         <nav class="nav">
-            <a class="logo" routerLink="/tasks">Ng Task</a>
+            <a class="logo" routerLink="/tasks">Post's</a>
             <button class="logout" (click)="logOut()">Salir</button>
         </nav>
     </header>

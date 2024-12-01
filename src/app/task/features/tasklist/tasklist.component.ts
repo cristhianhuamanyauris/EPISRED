@@ -7,7 +7,8 @@ import { TaskService } from '../../datacces/task.service';
   standalone: true,
   imports: [PagComponent, RouterLink],
   templateUrl: './tasklist.component.html',
-  styleUrl: './tasklist.component.css'
+  styleUrl: './tasklist.component.css',
+  providers: [TaskService],
 })
 export default class TasklistComponent {
   taskService = inject(TaskService);

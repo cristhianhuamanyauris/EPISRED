@@ -11,7 +11,8 @@ import { $locationShim } from '@angular/common/upgrade';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './taskform.component.html',
-  styleUrl: './taskform.component.css'
+  styleUrl: './taskform.component.css',
+  providers: [TaskService],
 })
 export default class TaskformComponent {
   //Segundo cambio acá
