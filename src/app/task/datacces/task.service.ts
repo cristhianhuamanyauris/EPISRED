@@ -1,7 +1,7 @@
 import { inject, Injectable, Query, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { updateCurrentUser } from '@angular/fire/auth';
-import { addDoc, collection, collectionData, doc, Firestore, getDoc, query, updateDoc, where } from '@angular/fire/firestore';
+import { addDoc, collection, collectionData, doc, Firestore, getDoc, query, updateDoc, where, deleteDoc } from '@angular/fire/firestore';
 import { catchError, Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs';
 import { AuthStateService } from '../../comp/dataccces/auth-state.service';
@@ -53,5 +53,9 @@ export class TaskService {
     const docRef = doc(this._collection, id);
     return updateDoc(docRef, {...task, userId: this._authState.currentUser?.uid});
 
+  }
+  delete(id: string): Promise<void> {
+    const docRef = doc(this._collection, id); // Referencia al documento
+    return deleteDoc(docRef); // Llamar a deleteDoc para eliminar el documento
   }
 }
