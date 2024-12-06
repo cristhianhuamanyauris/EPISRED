@@ -1,38 +1,99 @@
+/*
 .personalizarsecc {
-    margin: auto; /* Centra la sección horizontalmente */
+    margin: auto; 
     width: 100%;
-    max-width: 1024px; /* Ancho máximo de 1024px */
-    padding: 0 1rem; /* Espaciado interno a los lados */
+    max-width: 1024px; 
+    padding: 0 1rem;  
 }
 
 .logout {
-    position: relative; /* Necesario para posicionar el pseudo-elemento */
-    background-color: red; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    border: 2px solid black; /* Borde negro */
-    padding: 0.5rem 1rem; /* Espaciado interno */
-    font-size: 1rem; /* Tamaño del texto */
-    font-weight: bold; /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    overflow: hidden; /* Asegura que los pseudo-elementos no desborden */
-    transition: all 0.3s ease; /* Suaviza los efectos de hover */
-    margin-top: 8px; /* Añade un margen superior de 8 píxeles */
+    position: relative; 
+    background-color: red; 
+    color: white;
+    border: 2px solid black; 
+    padding: 0.5rem 1rem; 
+    font-size: 1rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    overflow: hidden;
+    transition: all 0.3s ease;  
+    margin-top: 8px; 
 }
 
 .logout::before {
-    content: ''; /* Pseudo-elemento para el borde blanco */
+    content: ''; 
     position: absolute;
     top: -6px;
     left: -6px;
     right: -6px;
     bottom: -6px;
-    border: 2px solid white; /* Crea el borde blanco externo */
-    z-index: -1; /* Envía este pseudo-elemento detrás del botón */
-    border-radius: 4px; /* Da un efecto más suave en las esquinas */
+    border: 2px solid white; 
+    z-index: -1; 
+    border-radius: 4px; 
 }
 
 .logout:hover {
-    opacity: 0.9; /* Suaviza el color al pasar el mouse */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    opacity: 0.9; 
+    transform: scale(1.05); 
 }
+
+
+.personalizarsecc {
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
+    border: 1px solid #ddd;  
+    border-radius: 12px; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 800px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+  }
+*/  
+  
+
+/* Contenedor principal de la sección */
+.personalizarsecc {
+    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); /* Degradado sutil */
+    border: 1px solid #ddd; /* Borde claro */
+    border-radius: 12px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px auto; /* Centrado con margen superior e inferior */
+    max-width: 800px; /* Ancho máximo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centrado del contenido */
+  }
+  
+  /* Botón 'Nuevo post' */
+  .personalizarsecc .logout {
+    display: inline-block; /* Elemento en línea con dimensiones */
+    background-color: #007bff; /* Color azul */
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+  }
+  
+  .personalizarsecc .logout:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }
+  
+  /* Mensaje de carga */
+  .personalizarsecc p {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #555; /* Gris medio */
+    margin-top: 20px; /* Separación superior */
+    font-style: italic; /* Texto en cursiva */
+  }
+  
+  /* Estilo del componente app-pag */
+  .personalizarsecc app-pag {
+    margin-top: 20px; /* Separación superior para el componente */
+    display: block; /* Garantiza que el componente ocupe todo el ancho */
+  }
+  

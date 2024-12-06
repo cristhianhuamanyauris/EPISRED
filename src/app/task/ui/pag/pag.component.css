@@ -1,3 +1,4 @@
+/*
 .product-info {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -27,4 +28,100 @@
 
 .product-info .product:nth-child(even) {
   background-color: #f1f1f1;
+}
+*/
+
+.product-info {
+  display: flex;
+  justify-content: center; 
+  margin-bottom: 20px; 
+}
+
+.product {
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
+  max-width: 600px; 
+  width: 100%; 
+  position: relative; 
+  animation: fadeIn 0.5s ease-in-out; 
+  transition: transform 0.3s, box-shadow 0.3s ease; 
+}
+
+.product:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-name small {
+  font-weight: normal;
+  font-size: 14px;
+  color: #888; 
+}
+
+
+.product p {
+  font-size: 16px;
+  color: #555; 
+  line-height: 1.5; 
+  margin-bottom: 15px;
+}
+
+.product p small {
+  font-size: 14px;
+  color: #999; 
+}
+
+
+a svg,
+button svg {
+  width: 24px;
+  height: 24px;
+  fill: none; 
+  stroke: #555; 
+  stroke-width: 2;
+  cursor: pointer;
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+a svg:hover,
+button svg:hover {
+  stroke: #007bff; 
+  transform: scale(1.1); 
+}
+
+
+button {
+  background: none; 
+  border: none; 
+  padding: 0;
+  cursor: pointer;
+  position: absolute; 
+  top: 15px;
+  right: 15px;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1); 
+
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

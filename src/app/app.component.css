@@ -1,0 +1,16 @@
+.background {
+    position: fixed; /* Fija el fondo para que ocupe toda la página */
+    top: 0;
+    left: 0;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    overflow: hidden; /* Evita que el contenido desborde */
+    z-index: -1; /* Envía la imagen al fondo */
+  }
+  
+  .background img {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: 100%; /* Ajusta la altura de la imagen al contenedor */
+    object-fit: cover; /* Recorta y escala la imagen para que cubra todo sin deformarse */
+  }
+  

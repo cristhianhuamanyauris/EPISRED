@@ -1,31 +1,36 @@
-<div class="login-container">
-    <div class="login-box">
-      <h1 class="login-title">
-        Iniciar Sesión 
-      </h1>
-      <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
-        <div class="form-group">
-          <label for="email" class="form-label">Tu correo</label>
-          <input type="email" name="email" id="email" class="form-input" placeholder="name@unajma.edu.pe" formControlName="email" >
-            @if(isRequired('email')){
-              <small>Este campo es requerido</small>
-            }
-            @if (hasEmailError()) {
-              <small>El correo debe ser válido</small>
-            }
+<div class="outer-container">
+  <div class="container">
+    <img src="/jma.jpg" alt="Entrenamiento con pesas en el gimnasio">
+    <div class="login-container">
+        <div class="login-box">
+          <h1 class="login-title">
+            Iniciar Sesión 
+          </h1>
+          <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="email" class="form-label">Tu correo</label>
+              <input type="email" name="email" id="email" class="form-input" placeholder="name@unajma.edu.pe" formControlName="email" >
+                @if(isRequired('email')){
+                  <small>Este campo es requerido</small>
+                }
+                @if (hasEmailError()) {
+                  <small>El correo debe ser válido</small>
+                }
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" formControlName="password">
+                @if(isRequired('password')){
+                  <small>Este campo es requerido</small>
+                }
+            </div>
+            <button type="submit" class="btn-primary">Ingresar</button>
+            <p class="signup-link">
+              Aun no tienes una cuenta? <a routerLink="/auth/singup">Crear cuenta</a>
+            </p>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" formControlName="password">
-            @if(isRequired('password')){
-              <small>Este campo es requerido</small>
-            }
-        </div>
-        <button type="submit" class="btn-primary">Ingresar</button>
-        <p class="signup-link">
-          Aun no tienes una cuenta? <a routerLink="/auth/singup">Crear cuenta</a>
-        </p>
-      </form>
-    </div>
+      </div>
   </div>
+</div>
   
