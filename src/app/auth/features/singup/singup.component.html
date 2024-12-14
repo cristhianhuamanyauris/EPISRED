@@ -7,23 +7,57 @@
             Crea una cuenta
           </h1>
           <form class="login-form" [formGroup]="form" (ngSubmit)="submit()">
+            <!-- Campo Nombre -->
+            <div class="form-group">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" name="name" id="name" class="form-input" placeholder="Juan" formControlName="name">
+              @if(isRequired('name')){
+                <small>Este campo es requerido</small>
+              }
+            </div>
+            <!-- Campo Apellido -->
+            <div class="form-group">
+              <label for="apel" class="form-label">Apellido</label>
+              <input type="text" name="apel" id="apel" class="form-input" placeholder="Pérez" formControlName="apel">
+              @if(isRequired('apel')){
+                <small>Este campo es requerido</small>
+              }
+            </div>
+            <!-- Campo Correo -->
             <div class="form-group">
               <label for="email" class="form-label">Tu correo</label>
               <input type="email" name="email" id="email" class="form-input" placeholder="name@unajma.edu.pe" formControlName="email" >
-                @if(isRequired('email')){
-                  <small>Este campo es requerido</small>
-                }
-                @if (hasEmailError()) {
-                  <small>El correo debe ser válido</small>
-                }
+              @if(isRequired('email')){
+                <small>Este campo es requerido</small>
+              }
+              @if (hasEmailError()) {
+                <small>El correo debe ser válido</small>
+              }
             </div>
+            <!-- Campo Contraseña -->
             <div class="form-group">
               <label for="password" class="form-label">Contraseña</label>
               <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" formControlName="password">
-                @if(isRequired('password')){
-                  <small>Este campo es requerido<br></small>
-                }
-                <small>La contraseña debe tener minimo 6 caracteres</small>
+              @if(isRequired('password')){
+                <small>Este campo es requerido<br></small>
+              }
+              <small>La contraseña debe tener minimo 6 caracteres</small>
+            </div>
+            <!-- Campo Teléfono -->
+            <div class="form-group">
+              <label for="phone" class="form-label">Número de teléfono</label>
+              <input type="text" name="phone" id="phone" class="form-input" placeholder="987654321" formControlName="phone">
+              @if(isRequired('phone')){
+                <small>Este campo es requerido</small>
+              }
+            </div>
+            <!-- Campo Fecha de Nacimiento -->
+            <div class="form-group">
+              <label for="birthdate" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" name="birthdate" id="birthdate" class="form-input" formControlName="birthdate">
+              @if(isRequired('birthdate')){
+                <small>Este campo es requerido</small>
+              }
             </div>
             <button type="submit" class="btn-primary">Crear</button>
             <p class="signup-link">

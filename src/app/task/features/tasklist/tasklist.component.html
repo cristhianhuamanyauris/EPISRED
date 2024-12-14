@@ -1,5 +1,10 @@
+<!--
+<div *ngIf="userDetails">
+    <p>Bienvenido, {{ userDetails.name }} {{ userDetails.apel }}</p>
+  </div>
 
 <section class="personalizarsecc">
+ 
     <a routerLink="/tasks/new" class="logout" >Nuevo post</a>
     @if (taskService.loading()) {
         <p>Espere un momento...</p>
@@ -8,4 +13,38 @@
         <app-pag [tasks]="taskService.getTasks()" />
     }
     
-</section>
+</section>-->
+
+
+<section class="personalizarsecc">
+    <!-- Mostrar perfil de usuario -->
+    <div *ngIf="userDetails" class="user-profile">
+      <div class="avatar">
+        <!-- Mostrar iniciales del usuario -->
+        <span>{{ userDetails.name?.charAt(0) }}{{ userDetails.apel?.charAt(0) }}</span>
+      </div>
+  
+      <div class="user-info">
+        <!-- Mostrar nombre y apellido -->
+        <p class="user-name">{{ userDetails.name }} {{ userDetails.apel }}</p>
+        <!-- Mostrar correo electrónico -->
+        <p class="user-email">{{ userDetails.email }}</p>
+      </div>
+    </div>
+  
+    <!-- Botón para crear un nuevo post -->
+    <div class="new-post-btn">
+      <a routerLink="/tasks/new" class="logout">Nuevo post</a>
+    </div>
+  
+    <!-- Mensaje de carga si está esperando tareas -->
+    <div *ngIf="taskService.loading()">
+      <p>Espere un momento...</p>
+    </div>
+  
+    <!-- Mostrar las tareas solo cuando estén disponibles -->
+    <div *ngIf="taskService.getTasks()?.length">
+      <app-pag [tasks]="taskService.getTasks()"></app-pag>
+    </div>
+  </section>
+  

@@ -1,9 +1,9 @@
 import { FormGroup } from "@angular/forms";
 import { ValidatorFn, AbstractControl, ValidationErrors } from "@angular/forms";
-export const isRequired = (filed: 'email' | 'password', form: FormGroup) => {
-    const control = form.get(filed);
-
-    return control && control.touched && control.hasError('required');
+export const isRequired = (field: string, form: FormGroup): boolean => {
+  const control = form.get(field);
+  // Aseguramos que siempre devuelva un booleano
+  return control ? control.touched && control.hasError('required') : false;
 };
 
 export const hasEmailError = (form: FormGroup) => {

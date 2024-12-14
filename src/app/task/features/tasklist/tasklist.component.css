@@ -1,99 +1,154 @@
 /*
 .personalizarsecc {
-    margin: auto; 
-    width: 100%;
-    max-width: 1024px; 
-    padding: 0 1rem;  
+  background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.logout {
-    position: relative; 
-    background-color: red; 
-    color: white;
-    border: 2px solid black; 
-    padding: 0.5rem 1rem; 
-    font-size: 1rem; 
-    font-weight: bold; 
-    cursor: pointer; 
-    text-transform: uppercase; 
-    overflow: hidden;
-    transition: all 0.3s ease;  
-    margin-top: 8px; 
+.personalizarsecc .logout {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.logout::before {
-    content: ''; 
-    position: absolute;
-    top: -6px;
-    left: -6px;
-    right: -6px;
-    bottom: -6px;
-    border: 2px solid white; 
-    z-index: -1; 
-    border-radius: 4px; 
+.personalizarsecc .logout:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-.logout:hover {
-    opacity: 0.9; 
-    transform: scale(1.05); 
+.personalizarsecc p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+  font-style: italic;
 }
 
+.personalizarsecc app-pag {
+  margin-top: 20px;
+  display: block;
+}
+*/
 
 .personalizarsecc {
-    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
-    border: 1px solid #ddd;  
-    border-radius: 12px; 
-    padding: 20px; 
-    margin: 20px auto; 
-    max-width: 800px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-  }
-*/  
-  
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-/* Contenedor principal de la sección */
+.personalizarsecc a.logout {
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.personalizarsecc .user-profile {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.personalizarsecc .user-profile .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24px;
+  margin-right: 20px;
+}
+.new-post-btn {
+  margin-bottom: 20px; /* Espacio debajo del botón */
+}
+.personalizarsecc .user-profile .user-info {
+  font-size: 18px;
+  color: #333;
+}
+
+.personalizarsecc .user-profile .user-info p {
+  margin: 5px 0;
+}
+
+.personalizarsecc .user-profile .user-info .user-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.personalizarsecc .user-profile .user-info .user-email {
+  color: #777;
+}
+
 .personalizarsecc {
-    background: linear-gradient(135deg, #f9f9f9, #e6e6e6); /* Degradado sutil */
-    border: 1px solid #ddd; /* Borde claro */
-    border-radius: 12px; /* Esquinas redondeadas */
-    padding: 20px; /* Espaciado interno */
-    margin: 20px auto; /* Centrado con margen superior e inferior */
-    max-width: 800px; /* Ancho máximo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Centrado del contenido */
-  }
-  
-  /* Botón 'Nuevo post' */
-  .personalizarsecc .logout {
-    display: inline-block; /* Elemento en línea con dimensiones */
-    background-color: #007bff; /* Color azul */
-    color: #fff; /* Texto blanco */
-    text-decoration: none; /* Sin subrayado */
-    font-size: 16px; /* Tamaño de fuente */
-    font-weight: bold; /* Negrita */
-    padding: 10px 20px; /* Espaciado interno */
-    border-radius: 8px; /* Esquinas redondeadas */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
-  }
-  
-  .personalizarsecc .logout:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación */
-  }
-  
-  /* Mensaje de carga */
-  .personalizarsecc p {
-    font-size: 18px; /* Tamaño de fuente más grande */
-    color: #555; /* Gris medio */
-    margin-top: 20px; /* Separación superior */
-    font-style: italic; /* Texto en cursiva */
-  }
-  
-  /* Estilo del componente app-pag */
-  .personalizarsecc app-pag {
-    margin-top: 20px; /* Separación superior para el componente */
-    display: block; /* Garantiza que el componente ocupe todo el ancho */
-  }
-  
+  background: linear-gradient(135deg, #f9f9f9, #e6e6e6); 
+  border: 1px solid #ddd; 
+  border-radius: 12px; 
+  padding: 20px; 
+  margin: 20px auto; 
+  max-width: 800px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+
+/* Contenedor del botón "Nuevo post" */
+.new-post-btn {
+  margin-bottom: 20px; /* Espacio debajo del botón */
+}
+
+/* Estilo del botón "Nuevo post" */
+.personalizarsecc .new-post-btn .logout {
+  display: inline-block; 
+  background-color: #007bff; 
+  color: #fff; 
+  text-decoration: none; 
+  font-size: 16px; 
+  font-weight: bold; 
+  padding: 12px 25px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+/* Efecto al pasar el ratón por encima */
+.personalizarsecc .new-post-btn .logout:hover {
+  background-color: #0056b3; 
+  transform: translateY(-2px); 
+}
+
+/* Efecto cuando se hace clic */
+.personalizarsecc .new-post-btn .logout:active {
+  transform: translateY(0px); 
+}
+
+/* Mensaje de carga */
+.personalizarsecc p {
+  font-size: 18px; 
+  color: #555; 
+  margin-top: 20px; 
+  font-style: italic; 
+}
+
+/* Estilo del componente app-pag */
+.personalizarsecc app-pag {
+  margin-top: 20px; 
+  display: block; 
+}
